@@ -1,9 +1,7 @@
 import axios from 'axios';
 
 export const getCurrentWeather = async(req,res) => {
-    console.log('hai');
     const {city} = req.query;
-    console.log(city);
 
     try {
         const response = await axios.get(`http://api.weatherapi.com/v1/current.json?key=${process.env.WEATHER_API_KEY}&q=${city}`);

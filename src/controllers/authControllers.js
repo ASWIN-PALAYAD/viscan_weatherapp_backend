@@ -7,8 +7,12 @@ import generateToken from '../utils/jwt.js';
 
 const prisma = new PrismaClient();
 
-export const registerUser = async(req,res) => {
+export const registerUser = async(req,res,next) => {
    const {email,password} = req.body;
+
+   if(!email || !password) { 
+    return next(new Error('Please provide email and password'));
+   }
 
    try {
     //hashing password
