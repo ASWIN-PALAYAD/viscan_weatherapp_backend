@@ -7,7 +7,7 @@ export const getCurrentWeather = async(req,res) => {
         const response = await axios.get(`http://api.weatherapi.com/v1/current.json?key=${process.env.WEATHER_API_KEY}&q=${city}`);
         res.json(response.data);
     } catch (error) {
-        res.status(500).json({error:"Unable to fetch weather data"})
+        res.status(500).json({error:"Unable to fetch weather data"}) 
     }
 };
 

@@ -7,7 +7,7 @@ import authenticate from '../middleware/authMiddleware.js';
 const router = express.Router();
 
 
-router.get('/current',authenticate,getCurrentWeather);
+router.get('/current',authenticate,getCurrentWeather); 
 router.get('/forecast',authenticate,getForecast);
 router.get('/historical',authenticate,getHistorical); 
 
